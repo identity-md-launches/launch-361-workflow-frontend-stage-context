@@ -1,0 +1,55 @@
+{
+  "chainId": 11155111,
+  "repoUrl": "https://github.com/identity-md-launches/launch-281-swaptiphook",
+  "version": 1,
+  "launchId": "170567d8-9a8e-41ed-9072-672fb141c11c",
+  "manifest": {
+    "hook": {
+      "contract": "SwapTipHook",
+      "permissions": [
+        "beforeSwap",
+        "afterSwap",
+        "beforeSwapReturnDelta",
+        "afterSwapReturnDelta"
+      ],
+      "constructorArgs": [
+        "0xE03A1074c86CFeDd5C142C4F04F1a1536e203543"
+      ]
+    },
+    "kind": "univ4_hook",
+    "pool": {
+      "fee": 3000,
+      "tickSpacing": 60,
+      "initialPrice": "791647387308859959733601586197955",
+      "pairedCurrency": "0x0000000000000000000000000000000000000000"
+    },
+    "notes": "SwapTipHook (src/SwapTipHook.sol) takes one IPoolManager argument, the approved Sepolia PoolManager. STIP (src/STIP.sol) has no constructor arguments. ABIs are documented in docs/abi/SwapTipHook.json and docs/abi/STIP.json. The pool has native ETH as currency0 and STIP as currency1; initialPrice is decimal sqrtPriceX96 at tick 184200, adopting the price exercised by test/LaunchRehearsal.t.sol and recorded in docs/rehearsal.json. That local fixture seeds one-sided STIP liquidity and exercises the first buy into an ETH-empty pool. Hook address permission bits are 0x00cc; all unlisted permissions are false. The constructor validates those bits, so deployment requires a matching CREATE2 address. Swap callbacks and unlockCallback require the PoolManager. Optional tips use exactly 64 bytes of hookData encoding a rate and recipient. Rates 1-500 bps credit a valid recipient; rates above 500 revert before recipient validation. Other lengths, zero rates, oversized recipient words, and zero, hook or PoolManager recipients charge no tip. ETH-specified swaps charge a positive specified delta in beforeSwap; ETH-unspecified swaps charge a positive unspecified delta in afterSwap. Fees round down and zero fees create no credit. Native-ETH pool partial fills revert. Pools whose currency0 is not native ETH receive zero deltas and no accounting effects. Tips are held as PoolManager ERC-6909 ETH claims; claim() clears the caller's balance before burning claims and taking ETH through unlockCallback. totalTipped is keyed by PoolId; balanceOf, tippedBy and receivedBy aggregate by address. tx.origin labels the tipper for display only, and hookData is unauthenticated. REVIEW.md records a requirement conflict: unsolicited ERC-6909 ETH claims can exceed recipient liabilities, so universal equality is not enforced. This technical manifest adopts the local rehearsal price; it does not assert independent review, production-factory verification, attestation, admission or deployment. Launch policy and signed artifact linkage are handled separately by services.",
+    "token": {
+      "name": "Swap Tip",
+      "symbol": "STIP",
+      "contract": "STIP",
+      "decimals": 18
+    }
+  },
+  "contracts": [
+    {
+      "name": "STIP",
+      "txHash": "0xc5710f1bee7220e9523fabd982758db11fdd19c63207e289db7cb53445b4a8c8",
+      "abiHash": "38880b8e56d42ce900f744a7908c7139632a49f1c3f33385c64ceaed29d37bee",
+      "address": "0x86a20b901f1e5082a4bea46045e3a05298784181",
+      "blockNumber": 11791410,
+      "creationCodeHash": "777d487a4e2149696fa8a5a465c1cd3f9d8e816436664776c15a3fbd8043480e"
+    },
+    {
+      "name": "SwapTipHook",
+      "txHash": "0xc5710f1bee7220e9523fabd982758db11fdd19c63207e289db7cb53445b4a8c8",
+      "abiHash": "2d94733a7cadacf02cdc2c6ba21ce0d733d346d811cf062198df909b55922524",
+      "address": "0x9a20b6545906ed45cf78e4cd5eaac70115bb80cc",
+      "blockNumber": 11791410,
+      "creationCodeHash": "fa7e30a45035365b71dd5db20678348978122ba0b25c4ad8363f19456b285567"
+    }
+  ],
+  "sourceCommit": "7f83c0ed3b0480db307d5552c88ecf771a51fd1b",
+  "abiInstructions": "Build ABIs from this exact source commit; compare canonicalKeccak(abi) with abiHash. Verify deployed code on the stated chain before enabling transactions.",
+  "attestationHash": "d9a575ced88b26602d7cdaae6d8ad0d04f0bd95de8b800bfdf3bc8564b83d712"
+}

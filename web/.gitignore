@@ -1,0 +1,8 @@
+# Path budget: this file only; excludes generated files at any depth under web/.
+**/node_modules/
+**/.cache/
+**/.npm/
+**/.vite/
+**/test-results/
+**/playwright-report/
+**/*.tsbuildinfo

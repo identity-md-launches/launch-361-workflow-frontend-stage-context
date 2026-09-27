@@ -1,0 +1,26 @@
+[
+  {
+    "selector": ".lead",
+    "color": "rgb(89, 99, 91)",
+    "background": "rgb(245, 243, 237)",
+    "ratio": 5.6316660023146525
+  },
+  {
+    "selector": ".primary",
+    "color": "rgb(255, 254, 250)",
+    "background": "rgb(36, 92, 64)",
+    "ratio": 7.764882982138173
+  },
+  {
+    "selector": ".impact h2",
+    "color": "rgb(32, 45, 39)",
+    "background": "rgb(217, 237, 145)",
+    "ratio": 11.236111011321123
+  },
+  {
+    "selector": ".hint",
+    "color": "rgb(89, 99, 91)",
+    "background": "rgb(255, 254, 250)",
+    "ratio": 6.192145842524791
+  }
+]

@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-09-27T06:42:59.249Z",
+  "url": "/preview/index.html",
+  "mode": "Mocked EIP-1193 wallet and JSON-RPC; no real transactions",
+  "results": [
+    {
+      "name": "Disconnected page loads relative assets, runtime manifest and event leaderboard",
+      "status": "passed"
+    },
+    {
+      "name": "Desktop, intermediate and mobile reflow; screenshots",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard skip link and visible focus",
+      "status": "passed"
+    },
+    {
+      "name": "Wallet rejection, recovery and unknown chain add/switch",
+      "status": "passed"
+    },
+    {
+      "name": "Invalid amount and recipient are rejected without quoting",
+      "status": "passed"
+    },
+    {
+      "name": "Quoter revert is shown and quote retry succeeds",
+      "status": "passed"
+    },
+    {
+      "name": "Quote changes invalidate review and tip slider supports keyboard",
+      "status": "passed"
+    },
+    {
+      "name": "Swap simulation revert prevents wallet signature",
+      "status": "passed"
+    },
+    {
+      "name": "Buy transaction uses network router, native value, minimum output and exact hook data",
+      "status": "passed"
+    },
+    {
+      "name": "Sell requires separate token and router approval transactions",
+      "status": "passed"
+    },
+    {
+      "name": "Claim simulation and confirmation refresh claimable balance",
+      "status": "passed"
+    },
+    {
+      "name": "Connected accessibility scan, text enlargement, contrast and screenshot",
+      "status": "passed"
+    },
+    {
+      "name": "Account change clears personal balances and quote",
+      "status": "passed"
+    },
+    {
+      "name": "Missing wallet has actionable recovery text",
+      "status": "passed"
+    },
+    {
+      "name": "Missing deployed code blocks actions and reports the contract",
+      "status": "passed"
+    },
+    {
+      "name": "RPC outage is displayed, never fabricated as zero data",
+      "status": "passed"
+    }
+  ],
+  "consoleErrors": [],
+  "unexpectedRpc": []
+}

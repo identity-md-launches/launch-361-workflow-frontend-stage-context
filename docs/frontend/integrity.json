@@ -1,0 +1,16 @@
+{
+  "allowedPathsOnly": true,
+  "protectedFilesUnchanged": true,
+  "newFiles": 40,
+  "newFileBytes": 1452788,
+  "ignoreFileBudget": [
+    "web/.gitignore"
+  ],
+  "excludedGeneratedDirectories": true,
+  "workingRepositoryCommit": "Unavailable: .git/index.lock cannot be created on read-only .git mount",
+  "exportAssets": 6,
+  "exportAssetBytes": 521474,
+  "bundleLimitBytes": 8388608,
+  "completeGitBundleBytesUpperBound": 2097152,
+  "bundleMeasurement": "Full-history submission assembled in disposable test/scratch checkout; no generated dependencies copied. Bundle must pass the 2 MiB bound as well as the assignment 8 MiB limit."
+}
